@@ -25,19 +25,19 @@ def check_user(username, password):
 
 def main():
     st.sidebar.title("Authentication Demo")
-    menu = ["Home", "Login", "SignUp"]
-    choice = st.sidebar.radio("Menu", menu)
+    menu = ["ホーム", "ログイン", "サインアップ"]
+    choice = st.sidebar.radio("メニュー", menu)
 
-    if choice == "Home":
-        st.subheader("Home")
+    if choice == "ホーム":
+        st.subheader("ホーム")
         # You can display whatever you want on the home page
 
-    elif choice == "Login":
-        st.subheader("Login Section")
+    elif choice == "ログイン":
+        st.subheader("ログイン Section")
         username = st.sidebar.text_input("User Name")
         password = st.sidebar.text_input("Password", type='password')
 
-        if st.sidebar.button("Login"):
+        if st.sidebar.button("ログイン"):
             if check_user(username, password):
                 st.success("Logged In as {}".format(username))
                 task = st.selectbox("Task", ["Add Post", "Analytics", "Profiles"])
@@ -50,12 +50,12 @@ def main():
             else:
                 st.warning("Incorrect Username/Password")
 
-    elif choice == "SignUp":
+    elif choice == "サインアップ":
         st.subheader("Create New Account")
         new_user = st.text_input("Username")
         new_password = st.text_input("Password", type='password')
 
-        if st.button("Signup"):
+        if st.button("サインアップ"):
             add_user(new_user, new_password)
             st.success("You have successfully created an account.")
             st.info("Go to Login Menu to login")
