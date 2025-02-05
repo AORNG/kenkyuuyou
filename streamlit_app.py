@@ -1,31 +1,65 @@
-# Streamlitライブラリをインポート
 import streamlit as st
+import sqlite3
 
-# ページ設定（タブに表示されるタイトル、表示幅）
-st.set_page_config(page_title="タイトル", layout="wide")
+def create_users_table():
+    conn = sqlite3.connect('users.db')
+    c = conn.cursor()
+    c.execute('CREATE TABLE IF NOT EXISTS users(username TEXT, password TEXT)')
+    conn.commit()
+    conn.close()
 
-# タイトルを設定
-st.title('Streamlitのサンプルアプリ')
+def add_user(username, password):
+    conn = sqlite3.connect('users.db')
+    c = conn.cursor()
+    c.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, password))
+    conn.commit()
+    conn.close()
 
-# テキスト入力ボックスを作成し、ユーザーからの入力を受け取る
-user_input = st.text_input('あなたの名前を入力してください')
+def check_user(username, password):
+    conn = sqlite3.connect('users.db')
+    c = conn.cursor()
+    c.execute('SELECT * FROM users WHERE username = ? AND password = ?', (username, password))
+    data = c.fetchall()
+    conn.close()
+    return len(data) != 0
 
-# ボタンを作成し、クリックされたらメッセージを表示
-if st.button('挨拶する'):
-    if user_input:  # 名前が入力されているかチェック
-        st.success(f'🌟 こんにちは、{user_input}さん! 🌟')  # メッセージをハイライト
-    else:
-        st.error('名前を入力してください。')  # エラーメッセージを表示
+def main():
+    st.sidebar.title("Authentication Demo")
+    menu = ["Home", "Login", "SignUp"]
+    choice = st.sidebar.radio("Menu", menu)
 
-# スライダーを作成し、値を選択
-number = st.slider('好きな数字（10進数）を選んでください', 0, 100)
+    if choice == "Home":
+        st.subheader("Home")
+        # You can display whatever you want on the home page
 
-# 補足メッセージ
-st.caption("十字キー（左右）でも調整できます。")
+    elif choice == "Login":
+        st.subheader("Login Section")
+        username = st.sidebar.text_input("User Name")
+        password = st.sidebar.text_input("Password", type='password')
 
-# 選択した数字を表示
-st.write(f'あなたが選んだ数字は「{number}」です。')
+        if st.sidebar.button("Login"):
+            if check_user(username, password):
+                st.success("Logged In as {}".format(username))
+                task = st.selectbox("Task", ["Add Post", "Analytics", "Profiles"])
+                if task == "Add Post":
+                    st.subheader("Add Your Post")
+                elif task == "Analytics":
+                    st.subheader("Analytics")
+                elif task == "Profiles":
+                    st.subheader("User Profiles")
+            else:
+                st.warning("Incorrect Username/Password")
 
-# 選択した数値を2進数に変換
-binary_representation = bin(number)[2:]  # 'bin'関数で2進数に変換し、先頭の'0b'を取り除く
-st.info(f'🔢 10進数の「{number}」を2進数で表現すると「{binary_representation}」になります。 🔢')  # 2進数の表示をハイライト
+    elif choice == "SignUp":
+        st.subheader("Create New Account")
+        new_user = st.text_input("Username")
+        new_password = st.text_input("Password", type='password')
+
+        if st.button("Signup"):
+            add_user(new_user, new_password)
+            st.success("You have successfully created an account.")
+            st.info("Go to Login Menu to login")
+
+if __name__ == "__main__":
+    create_users_table()
+    main()
