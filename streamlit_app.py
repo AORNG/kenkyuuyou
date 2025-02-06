@@ -64,5 +64,5 @@ def main():
             add_user(new_user,make_hashes(new_password))
             st.success("アカウントの作成しました")
             st.info("ログイン画面からログインしてください")
-if __name__ == "__name__":
+if __name__ == "__main__":
     main()
