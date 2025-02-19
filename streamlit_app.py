@@ -3,17 +3,17 @@ import pandas as pd
 import sqlite3
 import hashlib
 import requests
-
-#POSTリクエストを送信する関数
-def send_post_request(url,data):
+def send_post_request(url, data):
     try:
-        response = requests.post(url,json=data)
+        # 送信するJSONのキーを "body" に変更
+        response = requests.post(url, json={"body": data})
         if response.status_code == 200:
             st.write("成功: ", response.json())
         else:
-            st.write("エラー: ", response.status_code)
+            st.write(f"エラー: {response.status_code}, 詳細: {response.text}")
     except Exception as e:
         st.write(f"リクエストエラー: {e}")
+
 
 # パスワードの保存
 conn = sqlite3.connect("database.db")
@@ -57,8 +57,10 @@ def main():
     if choice == "ホーム":
         st.subheader("ホーム画面")
         check=st.text_input("入力")
-        send_post_request('https://prod-01.japaneast.logic.azure.com:443/workflows/38f7b8c8d476411d8d4351e0638c6750/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=DQl_g5amg0IRCFIs1lRiIBvicQ1Z9JI9i7uNgWKKu2g', check)
-        
+        check_button=st.button("ボタン")
+        if check_button:
+            send_post_request('https://prod-01.japaneast.logic.azure.com:443/workflows/38f7b8c8d476411d8d4351e0638c6750/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=DQl_g5amg0IRCFIs1lRiIBvicQ1Z9JI9i7uNgWKKu2g', check)
+
     elif choice == "ログイン":
         username = st.sidebar.text_input("ユーザー名を入力")
         password = st.sidebar.text_input("パスワードを入力", type="password")
