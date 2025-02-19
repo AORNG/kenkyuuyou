@@ -7,7 +7,7 @@ import requests
 #POSTリクエストを送信する関数
 def send_post_request(url,data):
     try:
-        response = requests.ost(url,json=data)
+        response = requests.post(url,json=data)
         if response.status_code == 200:
             st.write("成功: ", response.json())
         else:
