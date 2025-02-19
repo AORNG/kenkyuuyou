@@ -44,8 +44,7 @@ def main():
 
     if choice == "ホーム":
         st.subheader("ホーム画面")
-        st.text_input(label, value="", max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, args=None, kwargs=None, *, placeholder=None, disabled=False, label_visibility="visible")
-
+        st.text_input("入力")
     elif choice == "ログイン":
         username = st.sidebar.text_input("ユーザー名を入力")
         password = st.sidebar.text_input("パスワードを入力", type="password")
