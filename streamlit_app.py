@@ -5,6 +5,9 @@ import hashlib
 import requests
 from datetime import date
 import plotly.express as px
+a="7限"
+b="1221"
+c="Thursday"
 
 #ページ設定
 st.set_page_config(
@@ -13,7 +16,7 @@ st.set_page_config(
 )
 
 #excelデータ読み込み
-df = pd.read_excel("./注文履歴.xlsx", sheet_name="Sheet1", header=0, usecols="A:G")
+df = pd.read_excel("./日課表.xlsx", sheet_name="Sheet1", header=0, usecols="A:G")
 
 #データの修正
 df = df.dropna()  # 空白データがある行を除外
