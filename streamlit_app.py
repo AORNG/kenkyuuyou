@@ -16,7 +16,7 @@ st.set_page_config(
 )
 
 #excelデータ読み込み
-df = pd.read_excel("./日課表.xlsx", sheet_name="Sheet1", header=0, usecols="A:G")
+df = pd.read_excel("./日課表.xlsx", sheet_name="Sheet1", header=0, usecols="A:F")
 
 #データの修正
 df = df.dropna()  # 空白データがある行を除外
