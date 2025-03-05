@@ -16,18 +16,12 @@ st.set_page_config(
 )
 
 #excelデータ読み込み
-df = pd.read_excel("./日課表.xlsx", sheet_name="Sheet1", header=0, usecols="A:F")
+df = pd.read_excel("Z:\74回生\個人フォルダ\1年次\2組\1221\日課表.xlsx", header=0, usecols="A:F")
 
 #データの修正
 df = df.dropna()  # 空白データがある行を除外
-df[["単価", "数量", "金額"]] = df[["単価", "数量", "金額"]].astype(int)  # 金額や数量を整数型に変換
-df["月"] = df["購入日"].dt.month.astype(str)  # "月"の列を追加
-df["購入日|部署"] = df["購入日"].astype(str).str.cat(df["部署"], sep="|")  # "購入日|部署" 列を追加
 
-# 現在の年月を取得
-today = date.today()  # 今日の日付を取得
-this_year = today.year  # 年を取り出し
-this_month = today.month  # 月を取り出し
+st.dataframe(df)
 
 # タイトル表示
 st.title(f"{this_year}年{this_month}月")
