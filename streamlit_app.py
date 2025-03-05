@@ -5,9 +5,6 @@ import hashlib
 import requests
 from datetime import date
 import plotly.express as px
-a="7限"
-b="1221"
-c="Thursday"
 
 #ページ設定
 st.set_page_config(
