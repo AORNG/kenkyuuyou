@@ -12,13 +12,7 @@ st.set_page_config(
    layout="wide",
 )
 
-#excelデータ読み込み
-df = pd.read_excel("Z:\74回生\個人フォルダ\1年次\2組\1221\日課表.xlsx", sheet_name="1年1組" , header=0, usecols="A:F")
 
-#データの修正
-df = df.dropna()  # 空白データがある行を除外
-
-st.dataframe(df)
 
 def send_post_request(url, data):
     try:
