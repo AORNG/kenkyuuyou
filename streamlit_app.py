@@ -23,9 +23,6 @@ df = df.dropna()  # 空白データがある行を除外
 
 st.dataframe(df)
 
-# タイトル表示
-st.title(f"{this_year}年{this_month}月")
-
 def send_post_request(url, data):
     try:
         # 送信するJSONのキーを "body" に変更
