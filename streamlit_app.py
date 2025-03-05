@@ -12,8 +12,6 @@ st.set_page_config(
    layout="wide",
 )
 
-
-
 def send_post_request(url, data):
     try:
         # 送信するJSONのキーを "body" に変更
