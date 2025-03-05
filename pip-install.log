@@ -1,0 +1,94 @@
+2025-03-05T07:10:49,488 Using pip 24.0 from /usr/local/lib/python3.11/site-packages/pip (python 3.11)
+2025-03-05T07:10:49,489 Defaulting to user installation because normal site-packages is not writeable
+2025-03-05T07:10:49,583 Created temporary directory: /tmp/pip-build-tracker-0t5xc6rj
+2025-03-05T07:10:49,583 Initialized build tracking at /tmp/pip-build-tracker-0t5xc6rj
+2025-03-05T07:10:49,583 Created build tracker: /tmp/pip-build-tracker-0t5xc6rj
+2025-03-05T07:10:49,584 Entered build tracker: /tmp/pip-build-tracker-0t5xc6rj
+2025-03-05T07:10:49,584 Created temporary directory: /tmp/pip-install-0_xn4vx7
+2025-03-05T07:10:49,585 Created temporary directory: /tmp/pip-ephem-wheel-cache-ae_k3j94
+2025-03-05T07:10:49,609 1 location(s) to search for versions of package-name:
+2025-03-05T07:10:49,609 * https://pypi.org/simple/package-name/
+2025-03-05T07:10:49,610 Fetching project page and analyzing links: https://pypi.org/simple/package-name/
+2025-03-05T07:10:49,610 Getting page https://pypi.org/simple/package-name/
+2025-03-05T07:10:49,610 Found index url https://pypi.org/simple/
+2025-03-05T07:10:49,656 Fetched page https://pypi.org/simple/package-name/ as application/vnd.pypi.simple.v1+json
+2025-03-05T07:10:49,656   Found link https://files.pythonhosted.org/packages/61/5f/6690d5f0bad41818063e3f436c101deff0f243adede1d23642deb607349d/package_name-0.1.tar.gz (from https://pypi.org/simple/package-name/), version: 0.1
+2025-03-05T07:10:49,656 Skipping link: not a file: https://pypi.org/simple/package-name/
+2025-03-05T07:10:49,662 Given no hashes to check 1 links for project 'package-name': discarding no candidates
+2025-03-05T07:10:49,666 Collecting package-name
+2025-03-05T07:10:49,667   Created temporary directory: /tmp/pip-unpack-m466qneg
+2025-03-05T07:10:49,684   Downloading package_name-0.1.tar.gz (782 bytes)
+2025-03-05T07:10:49,691   Added package-name from https://files.pythonhosted.org/packages/61/5f/6690d5f0bad41818063e3f436c101deff0f243adede1d23642deb607349d/package_name-0.1.tar.gz to build tracker '/tmp/pip-build-tracker-0t5xc6rj'
+2025-03-05T07:10:49,692   Running setup.py (path:/tmp/pip-install-0_xn4vx7/package-name_7e45e17364104bcdb76b3c0823361b61/setup.py) egg_info for package package-name
+2025-03-05T07:10:49,692   Created temporary directory: /tmp/pip-pip-egg-info-2u6ghjjd
+2025-03-05T07:10:49,692   Running command python setup.py egg_info
+2025-03-05T07:10:49,846   running egg_info
+2025-03-05T07:10:49,847   creating /tmp/pip-pip-egg-info-2u6ghjjd/package_name.egg-info
+2025-03-05T07:10:49,850   writing /tmp/pip-pip-egg-info-2u6ghjjd/package_name.egg-info/PKG-INFO
+2025-03-05T07:10:49,850   writing dependency_links to /tmp/pip-pip-egg-info-2u6ghjjd/package_name.egg-info/dependency_links.txt
+2025-03-05T07:10:49,851   writing top-level names to /tmp/pip-pip-egg-info-2u6ghjjd/package_name.egg-info/top_level.txt
+2025-03-05T07:10:49,851   writing manifest file '/tmp/pip-pip-egg-info-2u6ghjjd/package_name.egg-info/SOURCES.txt'
+2025-03-05T07:10:49,859   reading manifest file '/tmp/pip-pip-egg-info-2u6ghjjd/package_name.egg-info/SOURCES.txt'
+2025-03-05T07:10:49,860   writing manifest file '/tmp/pip-pip-egg-info-2u6ghjjd/package_name.egg-info/SOURCES.txt'
+2025-03-05T07:10:49,876   Source in /tmp/pip-install-0_xn4vx7/package-name_7e45e17364104bcdb76b3c0823361b61 has version 0.1, which satisfies requirement package-name from https://files.pythonhosted.org/packages/61/5f/6690d5f0bad41818063e3f436c101deff0f243adede1d23642deb607349d/package_name-0.1.tar.gz
+2025-03-05T07:10:49,876   Removed package-name from https://files.pythonhosted.org/packages/61/5f/6690d5f0bad41818063e3f436c101deff0f243adede1d23642deb607349d/package_name-0.1.tar.gz from build tracker '/tmp/pip-build-tracker-0t5xc6rj'
+2025-03-05T07:10:49,877 Created temporary directory: /tmp/pip-unpack-9ve9j6_f
+2025-03-05T07:10:49,877 Building wheels for collected packages: package-name
+2025-03-05T07:10:49,878   Created temporary directory: /tmp/pip-wheel-vdmzedz7
+2025-03-05T07:10:49,878   Destination directory: /tmp/pip-wheel-vdmzedz7
+2025-03-05T07:10:49,878   Running command python setup.py bdist_wheel
+2025-03-05T07:10:50,006   running bdist_wheel
+2025-03-05T07:10:50,025   running build
+2025-03-05T07:10:50,025   running build_py
+2025-03-05T07:10:50,028   creating build
+2025-03-05T07:10:50,028   creating build/lib
+2025-03-05T07:10:50,029   creating build/lib/package_name
+2025-03-05T07:10:50,029   copying package_name/__init__.py -> build/lib/package_name
+2025-03-05T07:10:50,033   /usr/local/lib/python3.11/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+2025-03-05T07:10:50,033   !!
+
+2025-03-05T07:10:50,033           ********************************************************************************
+2025-03-05T07:10:50,034           Please avoid running ``setup.py`` directly.
+2025-03-05T07:10:50,034           Instead, use pypa/build, pypa/installer or other
+2025-03-05T07:10:50,034           standards-based tools.
+
+2025-03-05T07:10:50,034           See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+2025-03-05T07:10:50,035           ********************************************************************************
+
+2025-03-05T07:10:50,035   !!
+2025-03-05T07:10:50,035     self.initialize_options()
+2025-03-05T07:10:50,037   installing to build/bdist.linux-x86_64/wheel
+2025-03-05T07:10:50,037   running install
+2025-03-05T07:10:50,042   running install_lib
+2025-03-05T07:10:50,045   creating build/bdist.linux-x86_64
+2025-03-05T07:10:50,045   creating build/bdist.linux-x86_64/wheel
+2025-03-05T07:10:50,045   creating build/bdist.linux-x86_64/wheel/package_name
+2025-03-05T07:10:50,045   copying build/lib/package_name/__init__.py -> build/bdist.linux-x86_64/wheel/package_name
+2025-03-05T07:10:50,046   running install_egg_info
+2025-03-05T07:10:50,050   running egg_info
+2025-03-05T07:10:50,052   writing package_name.egg-info/PKG-INFO
+2025-03-05T07:10:50,053   writing dependency_links to package_name.egg-info/dependency_links.txt
+2025-03-05T07:10:50,053   writing top-level names to package_name.egg-info/top_level.txt
+2025-03-05T07:10:50,056   reading manifest file 'package_name.egg-info/SOURCES.txt'
+2025-03-05T07:10:50,056   writing manifest file 'package_name.egg-info/SOURCES.txt'
+2025-03-05T07:10:50,057   Copying package_name.egg-info to build/bdist.linux-x86_64/wheel/package_name-0.1-py3.11.egg-info
+2025-03-05T07:10:50,057   running install_scripts
+2025-03-05T07:10:50,059   creating build/bdist.linux-x86_64/wheel/package_name-0.1.dist-info/WHEEL
+2025-03-05T07:10:50,059   creating '/tmp/pip-wheel-vdmzedz7/package_name-0.1-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+2025-03-05T07:10:50,059   adding 'package_name/__init__.py'
+2025-03-05T07:10:50,060   adding 'package_name-0.1.dist-info/METADATA'
+2025-03-05T07:10:50,060   adding 'package_name-0.1.dist-info/WHEEL'
+2025-03-05T07:10:50,060   adding 'package_name-0.1.dist-info/top_level.txt'
+2025-03-05T07:10:50,060   adding 'package_name-0.1.dist-info/RECORD'
+2025-03-05T07:10:50,061   removing build/bdist.linux-x86_64/wheel
+2025-03-05T07:10:50,082   Created wheel for package-name: filename=package_name-0.1-py3-none-any.whl size=1230 sha256=bbcecaa2147a842c5ae9066456e3ae19869ed49d604df5725bc4c2f407ef1728
+2025-03-05T07:10:50,082   Stored in directory: /home/vscode/.cache/pip/wheels/b3/c1/6f/538e951eb00f535f43151173b4c55e463a35c17b9e90ab3b1a
+2025-03-05T07:10:50,084 Successfully built package-name
+2025-03-05T07:10:50,437 Installing collected packages: package-name
+
+2025-03-05T07:10:50,456 Successfully installed package-name-0.1
+2025-03-05T07:10:50,517 Remote version of pip: 25.0.1
+2025-03-05T07:10:50,518 Local version of pip:  24.0
+2025-03-05T07:10:50,535 Was pip installed by pip? True
+2025-03-05T07:10:50,535 WARNING: UpgradePrompt(old='24.0', new='25.0.1')
+2025-03-05T07:10:50,537 Removed build tracker: '/tmp/pip-build-tracker-0t5xc6rj'
