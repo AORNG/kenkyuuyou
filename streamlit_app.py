@@ -1,9 +1,9 @@
 from newspaper import Article
 
-urls = ["https://www.bbc.com/news/article1", "https://www.cnn.com/article2"]
-texts = []
-for url in urls:
-    article = Article(url)
-    article.download()
-    article.parse()
-    texts.append(article.text)
+url = "https://www.bbc.com/news/world-66204202"
+article = Article(url)
+article.download()
+article.parse()
+
+print(article.title)
+print(article.text[:300])  # 本文の冒頭を表示
