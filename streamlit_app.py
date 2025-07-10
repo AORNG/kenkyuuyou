@@ -5,6 +5,6 @@ st.title("BBC News RSS Feed")
 
 feed = feedparser.parse("https://feeds.bbci.co.uk/news/rss.xml")
 
-for entry in feed.entries[:5]:
+for entry in feed.entries[:1]:
     st.subheader(entry.title)
     st.write(entry.link)
